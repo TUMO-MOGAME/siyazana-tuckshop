@@ -1,0 +1,163 @@
+{
+  "_note": "Prices from the project proposal. NOT yet confirmed by the owner. Update only after the owner confirms.",
+  "shop": {
+    "name": "Siyazana Tuckshop",
+    "whatsapp": "TO CONFIRM",
+    "hours": [
+      {
+        "days": "Monday to Friday",
+        "open": "08:00",
+        "close": "20:00"
+      },
+      {
+        "days": "Saturday and Sunday",
+        "open": "08:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "fast-food",
+      "name": "Fast Food",
+      "products": [
+        {
+          "name": "Kota",
+          "options": [
+            {
+              "label": "R18",
+              "price": 18
+            },
+            {
+              "label": "R25",
+              "price": 25
+            },
+            {
+              "label": "R35",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "name": "Chips",
+          "options": [
+            {
+              "label": "R15",
+              "price": 15
+            },
+            {
+              "label": "R20",
+              "price": 20
+            },
+            {
+              "label": "R25",
+              "price": 25
+            },
+            {
+              "label": "R30",
+              "price": 30
+            }
+          ]
+        },
+        {
+          "name": "Hot Dog",
+          "price": 18
+        },
+        {
+          "name": "Vetkoek",
+          "price": 5
+        },
+        {
+          "name": "Vetkoek + Baba Combo",
+          "price": 18
+        },
+        {
+          "name": "Vetkoek + Baba + Cheese Combo",
+          "price": 22
+        }
+      ]
+    },
+    {
+      "id": "bread-milk",
+      "name": "Bread and Milk",
+      "products": [
+        {
+          "name": "Brown Bread",
+          "price": 18
+        },
+        {
+          "name": "White Bread",
+          "price": 19
+        },
+        {
+          "name": "Milk 500ml",
+          "price": 14
+        },
+        {
+          "name": "Milk 1 Litre",
+          "price": 28
+        },
+        {
+          "name": "Eggs (each)",
+          "price": 3
+        }
+      ]
+    },
+    {
+      "id": "groceries",
+      "name": "Groceries",
+      "products": [
+        {
+          "name": "Maize Meal 5kg",
+          "price": 75
+        },
+        {
+          "name": "Maize Meal 10kg",
+          "price": 145
+        },
+        {
+          "name": "Rice 5kg",
+          "price": 90
+        },
+        {
+          "name": "Rice 10kg",
+          "price": 165
+        },
+        {
+          "name": "Sugar 5kg",
+          "price": 80
+        },
+        {
+          "name": "Sugar 10kg",
+          "price": 166
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "products": [
+        {
+          "name": "Coke Can",
+          "price": 15
+        },
+        {
+          "name": "Coke 1.5L",
+          "price": 20
+        },
+        {
+          "name": "Coke 2L",
+          "price": 30
+        },
+        {
+          "name": "Other 2L Drinks",
+          "price": 25
+        },
+        {
+          "name": "Score Energy Drink",
+          "price": 12
+        }
+      ]
+    }
+  ]
+}
