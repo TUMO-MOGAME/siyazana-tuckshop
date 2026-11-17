@@ -41,13 +41,30 @@ python -m http.server 8000
 
 Then open http://localhost:8000. (Opening `index.html` straight from the folder blocks the price file from loading in most browsers.)
 
+## Tests
+
+```bash
+npm test
+```
+
+No installing needed (Node 20 or newer). The tests check the order total, the WhatsApp message and that every product in `data/products.json` has a valid price.
+
+## Before launch: the shop's WhatsApp number
+
+Until the owner confirms the number, `shop.whatsapp` in `data/products.json` says `TO CONFIRM` and the site runs in **test mode**: WhatsApp opens with the order written, and asks who to send it to. When the owner confirms, put the number in (`082 123 4567` format is fine) and set `pricesConfirmed` to `true` once the prices are confirmed too.
+
 ## Project layout
 
 ```
-index.html            the page
-data/products.json    products, prices, categories, shop details
-assets/images/        shop and product photos (owner's permission required)
-docs/PLAN.md          plan, milestones and how we work
+index.html                   the page (words on the page live here)
+css/styles.css               design tokens (colours, sizes) at the top, then the layout
+js/app.js                    loads the price file, builds the price list and the order box
+js/order.js                  order total, WhatsApp message and link (tested)
+data/products.json           products, prices, categories, shop details
+assets/images/               shop and product photos (owner's permission required)
+tests/                       npm test
+docs/PLAN.md                 plan, milestones and how we work
+docs/HOW-TO-PULL-REQUEST.md  step-by-step guide to branches and pull requests
 ```
 
 ## Status

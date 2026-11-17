@@ -33,7 +33,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
 
 body {
   margin: 0;
@@ -115,7 +115,8 @@ main { padding-bottom: var(--space-8); }
 .loading, .error { color: var(--color-muted); }
 
 /* Price list */
-.category { margin-bottom: var(--space-6); scroll-margin-top: var(--space-4); }
+.category, #order, #hours { scroll-margin-top: var(--space-4); }
+.category { margin-bottom: var(--space-6); }
 
 .products {
   list-style: none;
@@ -137,8 +138,168 @@ main { padding-bottom: var(--space-8); }
 }
 .product:first-child { border-top: 0; }
 
+.product-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 10rem;
+}
 .product-name { font-weight: 600; }
 .product-price { font-weight: 700; white-space: nowrap; }
+
+/* Products with sizes (Kota, Chips) */
+.product-group {
+  padding: var(--space-3) var(--space-4) var(--space-1);
+  border-top: 1px solid var(--color-border);
+}
+.product-group:first-child { border-top: 0; }
+.options { list-style: none; margin: var(--space-1) 0 0; padding: 0; }
+.product.option {
+  padding: var(--space-2) 0;
+  border-top: 1px dashed var(--color-border);
+}
+.product.option .product-name { font-weight: 700; }
+
+/* Quantity buttons */
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+}
+.step {
+  width: var(--tap);
+  height: var(--tap);
+  border: 2px solid var(--color-brand);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-brand);
+  font: inherit;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.step:disabled {
+  border-color: var(--color-border);
+  color: var(--color-muted);
+  cursor: default;
+}
+.qty {
+  min-width: 2ch;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Your order */
+.order-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+.order-box p:first-child { margin-top: 0; }
+.order-lines { list-style: none; margin: 0; padding: 0; }
+.order-lines li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.line-total { font-weight: 700; white-space: nowrap; }
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-h3);
+  font-weight: 700;
+  margin: var(--space-3) 0 var(--space-4);
+}
+.order-box label { display: block; font-weight: 600; margin-top: var(--space-3); }
+.optional { font-weight: 400; color: var(--color-muted); }
+.order-box input {
+  display: block;
+  width: 100%;
+  min-height: var(--tap);
+  margin-top: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+.order-box input:focus-visible { border-color: var(--color-brand); }
+.hint { font-size: var(--text-small); color: var(--color-muted); }
+.order-box .notice { margin: var(--space-3) 0; }
+
+.send-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  margin-top: var(--space-4);
+  border-radius: var(--radius);
+  background: var(--color-whatsapp);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.clear-order {
+  display: block;
+  width: 100%;
+  min-height: var(--tap);
+  margin-top: var(--space-2);
+  border: 0;
+  background: none;
+  color: var(--color-muted);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Running total pinned to the bottom of the screen */
+.order-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  padding-bottom: calc(var(--space-2) + env(safe-area-inset-bottom));
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-weight: 700;
+  z-index: 5;
+}
+.order-bar[hidden] { display: none; }
+.order-bar a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0 var(--space-4);
+  border-radius: var(--radius);
+  background: var(--color-whatsapp);
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+body.has-order-bar { padding-bottom: 4.5rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+[hidden] { display: none !important; }
 
 /* Opening hours */
 .hours { margin: 0; }
