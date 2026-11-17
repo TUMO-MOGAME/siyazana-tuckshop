@@ -2,3 +2,6 @@
 Thumbs.db
 .vscode/
 *.log
+
+# Stock photos downloaded for the proposal (copies live in the gig folder)
+*-unsplash.jpg
