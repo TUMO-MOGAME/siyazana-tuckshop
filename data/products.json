@@ -1,9 +1,9 @@
 {
-  "_note": "Prices from the project proposal. NOT yet confirmed by the owner. Update only after the owner confirms.",
+  "_note": "Prices confirmed by the owner. Poster is summary, owner list is full version.",
   "shop": {
     "name": "Siyazana Tuckshop",
-    "whatsapp": "TO CONFIRM",
-    "pricesConfirmed": false,
+    "whatsapp": "+27672947717",
+    "pricesConfirmed": true,
     "hours": [
       {
         "days": "Monday to Friday",
@@ -13,152 +13,33 @@
       {
         "days": "Saturday and Sunday",
         "open": "08:00",
-        "close": "22:00"
+        "close": "21:00"
+      },
+      {
+        "days": "Holidays",
+        "open": "08:00",
+        "close": "21:00"
       }
-    ]
+    ],
+    "payment": ["Cash", "Card"],
+    "delivery": false,
+    "collection_only": true
   },
-  "categories": [
-    {
-      "id": "fast-food",
-      "name": "Fast Food",
-      "products": [
-        {
-          "name": "Kota",
-          "options": [
-            {
-              "label": "R18",
-              "price": 18
-            },
-            {
-              "label": "R25",
-              "price": 25
-            },
-            {
-              "label": "R35",
-              "price": 35
-            }
-          ]
-        },
-        {
-          "name": "Chips",
-          "options": [
-            {
-              "label": "R15",
-              "price": 15
-            },
-            {
-              "label": "R20",
-              "price": 20
-            },
-            {
-              "label": "R25",
-              "price": 25
-            },
-            {
-              "label": "R30",
-              "price": 30
-            }
-          ]
-        },
-        {
-          "name": "Hot Dog",
-          "price": 18
-        },
-        {
-          "name": "Vetkoek",
-          "price": 5
-        },
-        {
-          "name": "Vetkoek + Baba Combo",
-          "price": 18
-        },
-        {
-          "name": "Vetkoek + Baba + Cheese Combo",
-          "price": 22
-        }
-      ]
-    },
-    {
-      "id": "bread-milk",
-      "name": "Bread and Milk",
-      "products": [
-        {
-          "name": "Brown Bread",
-          "price": 18
-        },
-        {
-          "name": "White Bread",
-          "price": 19
-        },
-        {
-          "name": "Milk 500ml",
-          "price": 14
-        },
-        {
-          "name": "Milk 1 Litre",
-          "price": 28
-        },
-        {
-          "name": "Eggs (each)",
-          "price": 3
-        }
-      ]
-    },
-    {
-      "id": "groceries",
-      "name": "Groceries",
-      "products": [
-        {
-          "name": "Maize Meal 5kg",
-          "price": 75
-        },
-        {
-          "name": "Maize Meal 10kg",
-          "price": 145
-        },
-        {
-          "name": "Rice 5kg",
-          "price": 90
-        },
-        {
-          "name": "Rice 10kg",
-          "price": 165
-        },
-        {
-          "name": "Sugar 5kg",
-          "price": 80
-        },
-        {
-          "name": "Sugar 10kg",
-          "price": 166
-        }
-      ]
-    },
-    {
-      "id": "drinks",
-      "name": "Drinks",
-      "products": [
-        {
-          "name": "Coke Can",
-          "price": 15
-        },
-        {
-          "name": "Coke 1.5L",
-          "price": 20
-        },
-        {
-          "name": "Coke 2L",
-          "price": 30
-        },
-        {
-          "name": "Other 2L Drinks",
-          "price": 25
-        },
-        {
-          "name": "Score Energy Drink",
-          "price": 12
-        }
-      ]
-    }
+  "products": [
+    { "name": "Kota / Umkhuba Igwinya - Small", "category": "Fast Food", "price": 18 },
+    { "name": "Kota / Umkhuba Igwinya - Medium", "category": "Fast Food", "price": 25 },
+    { "name": "Kota / Umkhuba Igwinya - Large", "category": "Fast Food", "price": 35 },
+    { "name": "Chips - Small", "category": "Fast Food", "price": 15 },
+    { "name": "Chips - Medium", "category": "Fast Food", "price": 20 },
+    { "name": "Chips - Large", "category": "Fast Food", "price": 25 },
+    { "name": "Chips - Extra Large", "category": "Fast Food", "price": 30 },
+    { "name": "Hot Dog", "category": "Fast Food", "price": 18 },
+    { "name": "Combo Hot Dog & Fries", "category": "Fast Food", "price": 25 },
+    { "name": "Vetkoek / Amagwinya", "category": "Fast Food", "price": 5 },
+    { "name": "Vetkoek + Baba Combo", "category": "Fast Food", "price": 18 },
+    { "name": "Vetkoek + Baba + Cheese Combo", "category": "Fast Food", "price": 22 },
+    { "name": "Cooked Full Yababa (Russian)", "category": "Fast Food", "price": 15 },
+    { "name": "Umkhuba Igwinya & Fries", "category": "Fast Food", "price": 10 },
+    { "name": "Umkhuba Igwinya, Fries, Yaloba & Cheese", "category": "Fast Food", "price": 20 }
   ]
 }
