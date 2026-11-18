@@ -42,6 +42,32 @@
         </noscript>
       </section>
 
+      <section id="order" aria-labelledby="order-heading" data-order-section hidden>
+        <h2 id="order-heading" tabindex="-1">Your order</h2>
+        <p class="sr-only" aria-live="polite" data-order-status></p>
+        <div class="order-box">
+          <p data-order-empty>Nothing yet. Tap <b>+</b> next to an item in the price list to add it.</p>
+          <div data-order-filled hidden>
+            <ul class="order-lines" data-order-lines></ul>
+            <p class="order-total"><span>Total</span> <span data-order-total>R0</span></p>
+
+            <label for="order-name">Your name <span class="optional">(optional)</span></label>
+            <input id="order-name" type="text" autocomplete="given-name" maxlength="40">
+
+            <label for="order-note">Note for the shop <span class="optional">(optional)</span></label>
+            <input id="order-note" type="text" maxlength="120" placeholder="For example: I'll collect at 17:00">
+
+            <p class="hint">Nothing is saved on this website. Your name and note only go into the WhatsApp message you send.</p>
+            <p class="notice" data-test-mode hidden>
+              <strong>Test mode.</strong> The shop's WhatsApp number isn't set yet, so WhatsApp will ask you who to send the order to.
+            </p>
+
+            <a class="send-order" data-send-order href="#" target="_blank" rel="noopener">Send order on WhatsApp</a>
+            <button type="button" class="clear-order" data-clear-order>Clear order</button>
+          </div>
+        </div>
+      </section>
+
       <section id="hours" aria-labelledby="hours-heading">
         <h2 id="hours-heading">Opening hours</h2>
         <!-- Shown until the price file loads, then replaced with the hours from data/products.json. -->
@@ -61,6 +87,11 @@
       </section>
     </div>
   </main>
+
+  <div class="order-bar" data-order-bar hidden>
+    <span data-order-bar-summary></span>
+    <a href="#order">View order</a>
+  </div>
 
   <footer class="site-footer">
     <div class="wrap">
