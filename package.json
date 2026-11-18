@@ -1,0 +1,9 @@
+{
+  "name": "siyazana-tuckshop",
+  "private": true,
+  "type": "module",
+  "description": "Online price list and WhatsApp ordering for Siyazana Tuckshop. No build step: this file only exists to run the tests.",
+  "scripts": {
+    "test": "node --test \"tests/*.test.js\""
+  }
+}

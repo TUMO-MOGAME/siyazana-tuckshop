@@ -3,20 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Siyazana Tuckshop</title>
-  <meta name="description" content="Siyazana Tuckshop price list and WhatsApp ordering. Coming soon.">
-  <style>
-    body { margin: 0; font-family: system-ui, sans-serif; background: #fffaf3; color: #1f1a14; }
-    main { max-width: 36rem; margin: 0 auto; padding: 3rem 1rem; }
-    h1 { font-size: 2rem; margin: 0 0 .5rem; }
-    p { font-size: 1.125rem; line-height: 1.5; }
-  </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+  <!-- Draft site: keep it out of search results until the owner approves it and prices are confirmed. -->
+  <meta name="robots" content="noindex">
+  <title>Siyazana Tuckshop: prices and WhatsApp orders</title>
+  <meta name="description" content="See Siyazana Tuckshop's prices and opening hours, then send your order on WhatsApp.">
+  <meta name="theme-color" content="#b4400f">
+  <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/app.js"></script>
 </head>
 <body>
-  <main>
-    <h1>Siyazana Tuckshop</h1>
-    <p>Our online price list and WhatsApp ordering are coming soon.</p>
-    <p>Open every day from 08:00. Closing: 20:00 Monday to Friday, 22:00 Saturday and Sunday.</p>
+  <a class="skip-link" href="#prices">Skip to the price list</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="shop-name">Siyazana Tuckshop</h1>
+      <p class="tagline">Groceries, drinks and fast food. Check the price, then order on WhatsApp.</p>
+      <nav class="category-nav" aria-label="Price list categories" data-category-nav>
+        <a href="#prices">Price list</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <p class="notice" data-draft-notice hidden>
+        <strong>Draft prices.</strong> These prices are still being checked with the shop and may change.
+      </p>
+
+      <section id="prices" aria-labelledby="prices-heading">
+        <h2 id="prices-heading">Price list</h2>
+        <div data-price-list>
+          <p class="loading">Loading prices…</p>
+        </div>
+        <noscript>
+          <p class="notice">The price list needs JavaScript switched on. You can also ask for prices at the shop.</p>
+        </noscript>
+      </section>
+
+      <section id="hours" aria-labelledby="hours-heading">
+        <h2 id="hours-heading">Opening hours</h2>
+        <!-- Shown until the price file loads, then replaced with the hours from data/products.json. -->
+        <dl class="hours" data-hours>
+          <div><dt>Monday to Friday</dt><dd>08:00 to 20:00</dd></div>
+          <div><dt>Saturday and Sunday</dt><dd>08:00 to 22:00</dd></div>
+        </dl>
+      </section>
+
+      <section id="how-to-order" aria-labelledby="order-heading">
+        <h2 id="order-heading">How to order</h2>
+        <ol class="steps">
+          <li>Choose your items and how many you want.</li>
+          <li>Tap <b>Send order on WhatsApp</b>. Your order message is written for you.</li>
+          <li>Send it. The shop replies to confirm stock and when to collect.</li>
+        </ol>
+      </section>
+    </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Siyazana Tuckshop · Prices may change. The shop confirms every order on WhatsApp.</p>
+      <p class="credit">Website made by Umuzi learners for the Block 3 Social Gig, 2026.</p>
+    </div>
+  </footer>
 </body>
 </html>

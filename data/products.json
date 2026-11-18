@@ -3,6 +3,7 @@
   "shop": {
     "name": "Siyazana Tuckshop",
     "whatsapp": "TO CONFIRM",
+    "pricesConfirmed": false,
     "hours": [
       {
         "days": "Monday to Friday",
