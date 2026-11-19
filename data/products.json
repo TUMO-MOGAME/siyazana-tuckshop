@@ -1,164 +1,45 @@
 {
-  "_note": "Prices from the project proposal. NOT yet confirmed by the owner. Update only after the owner confirms.",
-  "shop": {
-    "name": "Siyazana Tuckshop",
-    "whatsapp": "TO CONFIRM",
-    "pricesConfirmed": false,
-    "hours": [
-      {
-        "days": "Monday to Friday",
-        "open": "08:00",
-        "close": "20:00"
-      },
-      {
-        "days": "Saturday and Sunday",
-        "open": "08:00",
-        "close": "22:00"
-      }
-    ]
+  "store": "Siyazana Tuckshop",
+  "whatsapp": "+27 67 294 7717",
+  "pricesConfirmed": true,
+  "hours": {
+    "weekdays": "08:00-20:00",
+    "weekends": "08:00-21:00",
+    "holidays": "08:00-21:00"
   },
-  "categories": [
-    {
-      "id": "fast-food",
-      "name": "Fast Food",
-      "products": [
-        {
-          "name": "Kota",
-          "options": [
-            {
-              "label": "R18",
-              "price": 18
-            },
-            {
-              "label": "R25",
-              "price": 25
-            },
-            {
-              "label": "R35",
-              "price": 35
-            }
-          ]
-        },
-        {
-          "name": "Chips",
-          "options": [
-            {
-              "label": "R15",
-              "price": 15
-            },
-            {
-              "label": "R20",
-              "price": 20
-            },
-            {
-              "label": "R25",
-              "price": 25
-            },
-            {
-              "label": "R30",
-              "price": 30
-            }
-          ]
-        },
-        {
-          "name": "Hot Dog",
-          "price": 18
-        },
-        {
-          "name": "Vetkoek",
-          "price": 5
-        },
-        {
-          "name": "Vetkoek + Baba Combo",
-          "price": 18
-        },
-        {
-          "name": "Vetkoek + Baba + Cheese Combo",
-          "price": 22
-        }
-      ]
-    },
-    {
-      "id": "bread-milk",
-      "name": "Bread and Milk",
-      "products": [
-        {
-          "name": "Brown Bread",
-          "price": 18
-        },
-        {
-          "name": "White Bread",
-          "price": 19
-        },
-        {
-          "name": "Milk 500ml",
-          "price": 14
-        },
-        {
-          "name": "Milk 1 Litre",
-          "price": 28
-        },
-        {
-          "name": "Eggs (each)",
-          "price": 3
-        }
-      ]
-    },
-    {
-      "id": "groceries",
-      "name": "Groceries",
-      "products": [
-        {
-          "name": "Maize Meal 5kg",
-          "price": 75
-        },
-        {
-          "name": "Maize Meal 10kg",
-          "price": 145
-        },
-        {
-          "name": "Rice 5kg",
-          "price": 90
-        },
-        {
-          "name": "Rice 10kg",
-          "price": 165
-        },
-        {
-          "name": "Sugar 5kg",
-          "price": 80
-        },
-        {
-          "name": "Sugar 10kg",
-          "price": 166
-        }
-      ]
-    },
-    {
-      "id": "drinks",
-      "name": "Drinks",
-      "products": [
-        {
-          "name": "Coke Can",
-          "price": 15
-        },
-        {
-          "name": "Coke 1.5L",
-          "price": 20
-        },
-        {
-          "name": "Coke 2L",
-          "price": 30
-        },
-        {
-          "name": "Other 2L Drinks",
-          "price": 25
-        },
-        {
-          "name": "Score Energy Drink",
-          "price": 12
-        }
-      ]
-    }
+  "payment": "Cash + Card",
+  "delivery": "Collection only, NO delivery",
+  "products": [
+    { "name": "Kota - Small", "category": "Fast Food", "price": 18 },
+    { "name": "Kota - Medium", "category": "Fast Food", "price": 25 },
+    { "name": "Kota - Large", "category": "Fast Food", "price": 35 },
+    { "name": "Chips - Small", "category": "Fast Food", "price": 15 },
+    { "name": "Chips - Medium", "category": "Fast Food", "price": 20 },
+    { "name": "Chips - Large", "category": "Fast Food", "price": 25 },
+    { "name": "Chips - Extra Large", "category": "Fast Food", "price": 30 },
+    { "name": "Hot Dog", "category": "Fast Food", "price": 18 },
+    { "name": "Combo", "category": "Fast Food", "price": 25 },
+    { "name": "Vetkoek", "category": "Fast Food", "price": 5 },
+    { "name": "Vetkoek + Baba Combo", "category": "Fast Food", "price": 18 },
+    { "name": "Vetkoek + Baba + Cheese Combo", "category": "Fast Food", "price": 22 },
+    { "name": "Cooked Full Yababa (Russian)", "category": "Fast Food", "price": 15 },
+    { "name": "Umkhuba Igwinya & Fries", "category": "Fast Food", "price": 10 },
+    { "name": "Umkhuba Igwinya, Fries, Yaloba & Cheese", "category": "Fast Food", "price": 20 },
+    { "name": "Brown Bread", "category": "Bread and Milk", "price": 18 },
+    { "name": "White Bread", "category": "Bread and Milk", "price": 19 },
+    { "name": "Milk 500ml", "category": "Bread and Milk", "price": 14 },
+    { "name": "Milk 1 Litre", "category": "Bread and Milk", "price": 28 },
+    { "name": "Eggs", "category": "Bread and Milk", "price": 3 },
+    { "name": "Maize Meal 5kg", "category": "Groceries", "price": 75 },
+    { "name": "Maize Meal 10kg", "category": "Groceries", "price": 145 },
+    { "name": "Rice 5kg", "category": "Groceries", "price": 90 },
+    { "name": "Rice 10kg", "category": "Groceries", "price": 165 },
+    { "name": "Sugar 5kg", "category": "Groceries", "price": 80 },
+    { "name": "Sugar 10kg", "category": "Groceries", "price": 166 },
+    { "name": "Coke Can", "category": "Drinks", "price": 15 },
+    { "name": "Coke 1.5L", "category": "Drinks", "price": 20 },
+    { "name": "Coke 2L", "category": "Drinks", "price": 30 },
+    { "name": "Other 2L Drinks", "category": "Drinks", "price": 25 },
+    { "name": "Score Energy Drink", "category": "Drinks", "price": 12 }
   ]
 }
