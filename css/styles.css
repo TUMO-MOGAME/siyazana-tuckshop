@@ -313,6 +313,7 @@ body.has-order-bar { padding-bottom: 4.5rem; }
 }
 .hours dt { font-weight: 600; }
 .hours dd { margin: 0; }
+.shop-terms { margin-top: var(--space-4); }
 
 .steps { padding-left: var(--space-6); margin: 0; }
 .steps li { margin-bottom: var(--space-2); }

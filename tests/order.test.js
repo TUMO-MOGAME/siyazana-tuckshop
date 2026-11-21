@@ -5,20 +5,21 @@ import {
   orderableItems, orderLines, orderTotal, itemCount, changeQuantity,
   orderMessage, whatsappNumber, whatsappLink, MAX_QUANTITY,
 } from "../js/order.js";
+import { readPriceFile } from "../js/data.js";
 
-const data = JSON.parse(readFileSync(new URL("../data/products.json", import.meta.url), "utf8"));
+const data = readPriceFile(JSON.parse(readFileSync(new URL("../data/products.json", import.meta.url), "utf8")));
 const items = orderableItems(data.categories);
 const find = (name) => items.find((i) => i.name === name);
 
-test("products with sizes become one item per size, with unique keys", () => {
-  assert.ok(find("Kota (R25)"));
-  assert.equal(find("Kota (R25)").price, 25);
+test("every product becomes an orderable item with a unique key", () => {
+  assert.ok(find("Kota - Medium"));
+  assert.equal(find("Kota - Medium").price, 25);
   assert.equal(new Set(items.map((i) => i.key)).size, items.length);
 });
 
 test("quantities add up, never go below 0 or above the maximum", () => {
   const basket = new Map();
-  const kota = find("Kota (R25)").key;
+  const kota = find("Kota - Medium").key;
   changeQuantity(basket, kota, 1);
   changeQuantity(basket, kota, 1);
   assert.equal(basket.get(kota), 2);
@@ -29,20 +30,20 @@ test("quantities add up, never go below 0 or above the maximum", () => {
 });
 
 test("order lines, item count and total are right", () => {
-  const basket = new Map([[find("Kota (R25)").key, 2], [find("Coke 2L").key, 1], [find("Vetkoek").key, 3]]);
+  const basket = new Map([[find("Kota - Medium").key, 2], [find("Coke 2L").key, 1], [find("Vetkoek").key, 3]]);
   const lines = orderLines(items, basket);
-  assert.deepEqual(lines.map((l) => l.name), ["Kota (R25)", "Vetkoek", "Coke 2L"]);
+  assert.deepEqual(lines.map((l) => l.name), ["Kota - Medium", "Vetkoek", "Coke 2L"]);
   assert.equal(itemCount(lines), 6);
   assert.equal(orderTotal(lines), 2 * 25 + 3 * 5 + 30);
 });
 
 test("the WhatsApp message lists every item, the total, name and note", () => {
-  const basket = new Map([[find("Kota (R25)").key, 2], [find("Coke 2L").key, 1]]);
+  const basket = new Map([[find("Kota - Medium").key, 2], [find("Coke 2L").key, 1]]);
   const message = orderMessage("Siyazana Tuckshop", orderLines(items, basket), { name: " Thabo ", note: "Collect at 17:00" });
   assert.equal(message, [
     "Hi Siyazana Tuckshop, I would like to order:",
     "",
-    "2 x Kota (R25) = R50",
+    "2 x Kota - Medium = R50",
     "1 x Coke 2L = R30",
     "",
     "Total: R80",
@@ -70,4 +71,13 @@ test("South African numbers are turned into WhatsApp format", () => {
 test("the WhatsApp link has the number when known, and asks for a contact when not", () => {
   assert.equal(whatsappLink("082 123 4567", "2 x Kota"), "https://wa.me/27821234567?text=2%20x%20Kota");
   assert.equal(whatsappLink("TO CONFIRM", "Total: R80"), "https://wa.me/?text=Total%3A%20R80");
+});
+
+test("the shop's confirmed WhatsApp number is in a usable format", () => {
+  assert.equal(whatsappNumber(data.shop.whatsapp), "27672947717");
+});
+
+test("the old sizes format (options) still works if someone uses it", () => {
+  const old = orderableItems([{ id: "x", name: "X", products: [{ name: "Kota", options: [{ label: "R18", price: 18 }] }] }]);
+  assert.equal(old[0].name, "Kota (R18)");
 });

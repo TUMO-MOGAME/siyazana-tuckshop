@@ -2,6 +2,7 @@
 // and runs the WhatsApp order. To change a price, edit data/products.json, never this file.
 
 import { formatRand } from "./format.js";
+import { readPriceFile } from "./data.js";
 import {
   orderableItems, orderLines, orderTotal, itemCount, changeQuantity,
   orderMessage, whatsappLink, whatsappNumber, MAX_QUANTITY,
@@ -84,6 +85,17 @@ function renderHours(hours, list) {
     div.append(el("dt", {}, h.days), el("dd", {}, `${h.open} to ${h.close}`));
     list.append(div);
   }
+}
+
+function renderShopTerms(shopDetails, list) {
+  list.replaceChildren();
+  const rows = [["Payment", shopDetails.payment], ["Delivery", shopDetails.delivery]].filter(([, v]) => v);
+  for (const [label, value] of rows) {
+    const div = el("div");
+    div.append(el("dt", {}, label), el("dd", {}, value));
+    list.append(div);
+  }
+  list.hidden = rows.length === 0;
 }
 
 /* ---------- Order ---------- */
@@ -181,13 +193,14 @@ async function start() {
   try {
     const response = await fetch(DATA_URL, { cache: "no-cache" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
+    const data = readPriceFile(await response.json());
     shop = data.shop;
     items = orderableItems(data.categories);
 
     renderPriceList(data.categories, priceList);
     renderCategoryNav(data.categories, document.querySelector("[data-category-nav]"));
     renderHours(shop.hours, document.querySelector("[data-hours]"));
+    renderShopTerms(shop, document.querySelector("[data-shop-terms]"));
     document.querySelector("[data-draft-notice]").hidden = shop.pricesConfirmed === true;
     startOrdering();
   } catch (error) {

@@ -18,6 +18,9 @@ Only change prices in `data/products.json`, and only after the owner has confirm
 
 ## Before any merge
 
+- [ ] The **Tests** check on the pull request is a green tick
+- [ ] Someone other than the author has approved it
+
 - [ ] Works on a 360px-wide phone, no sideways scrolling
 - [ ] Text is large and readable; buttons are easy to tap
 - [ ] The WhatsApp order message is correct (items, quantities, total)
