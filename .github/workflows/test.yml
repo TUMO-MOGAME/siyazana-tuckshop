@@ -1,0 +1,22 @@
+name: Tests
+
+# Runs on every pull request and every change to main.
+# A red cross on a pull request means something is broken (often a typo in data/products.json):
+# open "Details" to see which line to fix. Don't merge until it is a green tick.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test

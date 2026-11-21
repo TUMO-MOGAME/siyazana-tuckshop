@@ -15,7 +15,7 @@ Built for the Umuzi Experience Accelerator **Block 3 Social Gig**, 18 November t
 | WhatsApp ordering | Pick items and quantities; the site writes the order message and opens WhatsApp to the shop's number. The owner confirms stock and collection. |
 | QR code poster | Scan at the shop door to open the price list |
 
-Opening hours: Monday to Friday 08:00 to 20:00, Saturday and Sunday 08:00 to 22:00.
+Opening hours (confirmed by the owner, 19 Nov 2026): Monday to Friday 08:00 to 20:00; Saturday, Sunday and public holidays 08:00 to 21:00. Payment: cash or card. Collection only, no delivery.
 
 ## Team
 
@@ -49,9 +49,20 @@ npm test
 
 No installing needed (Node 20 or newer). The tests check the order total, the WhatsApp message and that every product in `data/products.json` has a valid price.
 
-## Before launch: the shop's WhatsApp number
+## Changing prices or products
 
-Until the owner confirms the number, `shop.whatsapp` in `data/products.json` says `TO CONFIRM` and the site runs in **test mode**: WhatsApp opens with the order written, and asks who to send it to. When the owner confirms, put the number in (`082 123 4567` format is fine) and set `pricesConfirmed` to `true` once the prices are confirmed too.
+Everything the shop sells is in [`data/products.json`](data/products.json), one line per product:
+
+```json
+{ "name": "Kota - Medium", "category": "Fast Food", "price": 25 },
+```
+
+- `price` is a plain number: `25`, not `"R25"`.
+- `category` decides the heading it appears under. Categories show in the order they first appear in the file.
+- Every line ends with a comma except the last product.
+- Shop details at the top: `whatsapp`, `hours` (`"08:00-20:00"` format), `payment`, `delivery`. `pricesConfirmed: true` hides the "Draft prices" notice.
+
+Only change prices after the owner confirms, and say who confirmed and when in the pull request. Every pull request runs the tests automatically: wait for the green tick before merging.
 
 ## Project layout
 
@@ -59,6 +70,7 @@ Until the owner confirms the number, `shop.whatsapp` in `data/products.json` say
 index.html                   the page (words on the page live here)
 css/styles.css               design tokens (colours, sizes) at the top, then the layout
 js/app.js                    loads the price file, builds the price list and the order box
+js/data.js                   reads and checks products.json (tested)
 js/order.js                  order total, WhatsApp message and link (tested)
 data/products.json           products, prices, categories, shop details
 assets/images/               shop and product photos (owner's permission required)
@@ -69,6 +81,6 @@ docs/HOW-TO-PULL-REQUEST.md  step-by-step guide to branches and pull requests
 
 ## Status
 
-Set up 12 November 2026. Proposal due 13 November; build starts 18 November. Prices in `data/products.json` come from the proposal and are **not yet confirmed by the owner**.
+Set up 12 November 2026. Proposal due 13 November; build starts 18 November. Prices, hours and the WhatsApp number in `data/products.json` were confirmed by the owner on 19 Nov 2026.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how we work together.
