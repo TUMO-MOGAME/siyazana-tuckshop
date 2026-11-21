@@ -75,7 +75,7 @@ function renderPriceList(categories, container) {
 function renderCategoryNav(categories, nav) {
   nav.replaceChildren();
   for (const category of categories) nav.append(el("a", { href: `#${category.id}` }, category.name));
-  nav.append(el("a", { href: "#order" }, "Your order"), el("a", { href: "#hours" }, "Hours"));
+  nav.hidden = false;
 }
 
 function renderHours(hours, list) {

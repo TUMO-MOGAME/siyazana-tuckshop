@@ -20,8 +20,10 @@
     <div class="wrap">
       <h1 class="shop-name">Siyazana Tuckshop</h1>
       <p class="tagline">Groceries, drinks and fast food. Check the price, then order on WhatsApp.</p>
-      <nav class="category-nav" aria-label="Price list categories" data-category-nav>
-        <a href="#prices">Price list</a>
+      <nav class="category-nav" aria-label="Page sections">
+        <a href="#prices">Prices</a>
+        <a href="#order">Your order</a>
+        <a href="#hours">Hours</a>
       </nav>
     </div>
   </header>
@@ -34,7 +36,9 @@
 
       <section id="prices" aria-labelledby="prices-heading">
         <h2 id="prices-heading">Price list</h2>
-        <div data-price-list>
+        <nav class="category-nav jump-nav" aria-label="Price list categories" data-category-nav hidden></nav>
+        <!-- Keeps a screen of space while the prices load, so nothing below jumps when they arrive. -->
+        <div class="price-list" data-price-list>
           <p class="loading">Loading prices…</p>
         </div>
         <noscript>
@@ -79,8 +83,8 @@
         <dl class="hours shop-terms" data-shop-terms hidden></dl>
       </section>
 
-      <section id="how-to-order" aria-labelledby="order-heading">
-        <h2 id="order-heading">How to order</h2>
+      <section id="how-to-order" aria-labelledby="how-heading">
+        <h2 id="how-heading">How to order</h2>
         <ol class="steps">
           <li>Choose your items and how many you want.</li>
           <li>Tap <b>Send order on WhatsApp</b>. Your order message is written for you.</li>

@@ -114,6 +114,11 @@ main { padding-bottom: var(--space-8); }
 
 .loading, .error { color: var(--color-muted); }
 
+/* Reserve a screen of space while prices load so the sections below don't jump (layout shift). */
+.price-list { min-height: 100vh; }
+.jump-nav { margin-bottom: var(--space-4); }
+.jump-nav a { border: 2px solid var(--color-brand); }
+
 /* Price list */
 .category, #order, #hours { scroll-margin-top: var(--space-4); }
 .category { margin-bottom: var(--space-6); }
