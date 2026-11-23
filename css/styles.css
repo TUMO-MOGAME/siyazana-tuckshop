@@ -80,7 +80,7 @@ a { color: var(--color-brand); }
   color: var(--color-brand-text);
   padding: var(--space-6) 0 var(--space-4);
 }
-.shop-name { font-size: var(--text-h1); }
+.shop-name { font-size: var(--text-h1); font-weight: 700; line-height: 1.2; margin: 0 0 var(--space-3); }
 .tagline { margin: 0 0 var(--space-4); }
 
 .category-nav {
@@ -330,3 +330,11 @@ body.has-order-bar { padding-bottom: 4.5rem; }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+
+/* Text pages (privacy, 404) */
+.home-link { color: inherit; text-decoration: none; }
+.prose { padding-top: var(--space-6); padding-bottom: var(--space-8); }
+.prose h1 { font-size: var(--text-h1); color: var(--color-brand); }
+.prose h2 { margin-top: var(--space-6); }
+.prose ul { padding-left: var(--space-6); }
+.prose li { margin-bottom: var(--space-2); }

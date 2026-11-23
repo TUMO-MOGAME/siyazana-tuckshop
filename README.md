@@ -77,6 +77,10 @@ assets/images/               shop and product photos (owner's permission require
 tests/                       npm test
 docs/PLAN.md                 plan, milestones and how we work
 docs/HOW-TO-PULL-REQUEST.md  step-by-step guide to branches and pull requests
+docs/LAUNCH-CHECKLIST.md     what to check before v1 goes public
+docs/UPDATING-PRICES.md      handover: how prices get changed after 4 Dec
+privacy.html, 404.html       privacy notice (template) and page-not-found
+sitemap.xml                  for Google, once the site is public
 ```
 
 ## Status
